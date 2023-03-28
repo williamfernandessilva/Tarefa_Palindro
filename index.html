@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Tarefa Palindro</title>
+    <style>
+        div{
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;           
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 25px;
+            background-color: white;
+            padding: 60px;
+            border-radius: 10px;
+        }
+        
+
+
+    </style>
+</head>
+
+<body style="background-color: black;">
+  
+    <div style="flex-direction: column;justify-content: center;" >
+    <p style="font-size: 30px;color: ;">Tarefa Palindro</p>
+  <input style="border-radius: 50px;" type="text" value="" id="text">
+  <br>
+  <button style="border-radius: 40px; background-color: black;color: white" id="button" >Validar</button>
+  <p style="font-size: 25px;color: red;" id="result"></p>
+</div>
+
+</body>
+</html>
+
+<script>
+
+const button = document.querySelector('#button');
+const resultText = document.querySelector('#result');
+
+function invertText(text) {
+  const changedText = text.split('').reverse().join('');
+  return text === changedText ? true : false;
+}
+
+button.addEventListener('click', () => {
+  const textValue = document.querySelector('#text').value;
+  const result  = invertText(textValue);
+
+  result
+    ? resultText.innerHTML = 'O numero é um palídromo'
+  : resultText.innerHTML = 'O numero não é um palídromo';
+});
+
+
+
+
+</script>
